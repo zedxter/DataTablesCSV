@@ -1,0 +1,38 @@
+/*
+* File: dataTables.CSV.css
+* Description: Styles for client side CSV exporter
+* Author: Danil Galeev (www.profitbricks.com)
+* Language: Javascript
+* License: MIT
+* Project: DataTables
+*
+* Copyright 2013-2015 Danil Galeev, all rights reserved.
+*/
+
+
+a.datatable-get-csv {
+    height: 18px;
+    padding: 3px 8px;
+    position: relative;
+    float: right;
+    margin-right: 3px;
+    padding: 5px 8px;
+    border: 1px solid #999;
+    cursor: pointer;
+    font-size: 0.88em;
+    color: #000 !important;
+    white-space: nowrap;
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px #CCC;
+    background: -webkit-linear-gradient(top, #ffffff 0%,#f3f3f3 89%,#f9f9f9 100%); /* Chrome10+,Safari5.1+ */
+    background:    -moz-linear-gradient(top, #ffffff 0%,#f3f3f3 89%,#f9f9f9 100%); /* FF3.6+ */
+}
+
+a.datatable-get-csv:hover {
+    border: 1px solid #666;
+    text-decoration: none !important;
+    -webkit-box-shadow: 1px 1px 3px #999;
+    -moz-box-shadow: 1px 1px 3px #999;
+    background: -webkit-linear-gradient(top, #f3f3f3 0%,#e2e2e2 89%,#f4f4f4 100%); /* Chrome10+,Safari5.1+ */
+    background:    -moz-linear-gradient(top, #f3f3f3 0%,#e2e2e2 89%,#f4f4f4 100%); /* FF3.6+ */
+}
