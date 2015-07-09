@@ -50,7 +50,7 @@ $.fn.dataTableExt.aoFeatures.push({
 		btn.setAttribute("href", "javascript: void(0);");
 
 		btn.addEventListener("click", function() {
-			var contentParts = [], rowParts = [], visibleColumns = [], column, data, field;
+			var contentParts = [], rowParts = [], visibleColumns = [], column, data, dataHtml, field;
 			var filename = oSettings.sTableId || "items_list";
 			var table = oSettings.oInstance.DataTable();
 			var rows = table.rows({filter: "applied"});
@@ -61,7 +61,7 @@ $.fn.dataTableExt.aoFeatures.push({
 			// Columns and headers
 			for (var i = 0; i < columnsCount; i++) {
 				column = table.column(i);
-				if (column.visible() && $.type(column.dataSrc()) === "string") {
+				if (column.visible() && ($.type(column.dataSrc()) === "string" || $.type(column.dataSrc()) === "number")) {
 					visibleColumns.push(column.dataSrc());
 					rowParts.push($(column.header()).html());
 				}
@@ -80,7 +80,17 @@ $.fn.dataTableExt.aoFeatures.push({
 					if ($.type(data) === "array") {
 						rowParts.push(data[0]);
 					} else {
-						rowParts.push(data);
+						try {
+							dataHtml = $(data).html();
+						}
+						catch (e) {
+							dataHtml = data;
+						}
+						if (dataHtml) {
+							rowParts.push(dataHtml);
+						} else {
+							rowParts.push(data);
+						}
 					}
 				}
 				contentParts.push(rowParts.join(";"));

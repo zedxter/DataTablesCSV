@@ -11,12 +11,11 @@
 
 
 a.datatable-get-csv {
-    height: 18px;
-    padding: 3px 8px;
+    height: 18px !important;
     position: relative;
     float: right;
     margin-right: 3px;
-    padding: 5px 8px;
+    padding: 5px 8px !important;
     border: 1px solid #999;
     cursor: pointer;
     font-size: 0.88em;
