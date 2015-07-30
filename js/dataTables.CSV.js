@@ -68,7 +68,7 @@ $.fn.dataTableExt.aoFeatures.push({
 			}
 
 			if (rowParts.length > 0) {
-				contentParts.push(rowParts.join(";"));
+				contentParts.push(rowParts.join(","));
 			}
 
 			// Rows
@@ -93,7 +93,7 @@ $.fn.dataTableExt.aoFeatures.push({
 						}
 					}
 				}
-				contentParts.push(rowParts.join(";"));
+				contentParts.push(rowParts.join(","));
 			}
 
 			btn.setAttribute("href", "data:text/csv;charset=utf-8," + encodeURIComponent(contentParts.join("\n")));
