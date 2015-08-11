@@ -87,7 +87,7 @@ $.fn.dataTableExt.aoFeatures.push({
 							dataHtml = data;
 						}
 						if (dataHtml) {
-							rowParts.push(dataHtml);
+							rowParts.push($('<textarea/>').html(dataHtml).text());
 						} else {
 							rowParts.push(data);
 						}
